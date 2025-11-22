@@ -1,0 +1,277 @@
+/* الخطوط */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+
+/* --------- عام --------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  background-color: #f7f7f7;
+  color: #222;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --------- Navbar --------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary, #5A3AF0);
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a,
+.nav-links button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-weight: 600;
+}
+
+.nav-links a:hover,
+.nav-links button:hover {
+  background-color: #5A3AF0;
+  color: #fff;
+}
+
+/* --------- Hero --------- */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 50px;
+  background-color: #e0e0ff;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.hero-img img {
+  width: 500px;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* --------- Sections --------- */
+section {
+  padding: 60px 50px;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* --------- Expertise --------- */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.exp-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.exp-card:hover {
+  transform: translateY(-5px);
+  background-color: #5A3AF0;
+  color: #fff;
+}
+
+/* --------- YouTube Section --------- */
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.video-card iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+}
+
+/* --------- Contact Form --------- */
+.contact-page {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.contact-info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-info li i {
+  margin-right: 10px;
+  color: var(--primary, #5A3AF0);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  padding: 12px 20px;
+  background-color: var(--primary, #5A3AF0);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.contact-form button:hover {
+  background-color: #422ad1;
+}
+
+/* --------- Footer --------- */
+footer {
+  padding: 30px 50px;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+}
+
+footer .social-links a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 20px;
+}
+
+footer .social-links a:hover {
+  color: var(--primary, #5A3AF0);
+}
+
+/* --------- Dark Mode --------- */
+body.dark {
+  background-color: #1a1a1a;
+  color: #f7f7f7;
+}
+
+body.dark .navbar {
+  background-color: #111;
+}
+
+body.dark .exp-card {
+  background-color: #222;
+}
+
+body.dark .exp-card:hover {
+  background-color: #5A3AF0;
+  color: #fff;
+}
+
+body.dark .hero {
+  background-color: #2a2a2a;
+}
+
+body.dark .contact-form input,
+body.dark .contact-form select,
+body.dark .contact-form textarea {
+  background-color: #333;
+  color: #f7f7f7;
+  border: 1px solid #555;
+}
+
+body.dark footer {
+  background-color: #111;
+}
+
+/* --------- Buttons Dark Toggle --------- */
+.dark-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--primary, #5A3AF0);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 1001;
+  transition: 0.3s;
+}
+
+.dark-toggle:hover {
+  background-color: #422ad1;
+}
+
+/* --------- Responsive --------- */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-img {
+    margin-bottom: 30px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

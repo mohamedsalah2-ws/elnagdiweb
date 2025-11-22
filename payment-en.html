@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment | Al-Najdi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="navbar">
+  <nav class="navbar">
+    <div class="logo">Al-Najdi</div>
+    <ul class="nav-links">
+      <li><a href="index-en.html">Home</a></li>
+      <li><a href="services-en.html">Services</a></li>
+      <li><a href="why-us-en.html">Why Us</a></li>
+      <li><a href="contact-en.html">Contact</a></li>
+    </ul>
+    <button id="langSwitch" class="lang-toggle">AR</button>
+  </nav>
+</header>
+
+<section class="payment-section">
+  <div class="payment-container">
+    <h1>Payment</h1>
+    <p>Complete your payment information to finish the purchase</p>
+
+    <div class="payment-grid">
+      <div class="payment-form">
+        <form id="paymentForm">
+          <label for="name">Cardholder Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+          <label for="card">Card Number</label>
+          <input type="text" id="card" name="card" placeholder="XXXX XXXX XXXX XXXX" required>
+
+          <label for="expiry">Expiry Date</label>
+          <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" name="cvv" placeholder="XXX" required>
+
+          <button type="submit" class="btn btn-submit">Pay Now</button>
+        </form>
+      </div>
+
+      <div class="payment-summary">
+        <h2>Payment Summary</h2>
+        <p>Service: Administrative Consultation</p>
+        <p>Price: 500 </p>
+        <p>Taxes: 0 </p>
+        <hr>
+        <h3>Total: 500 </h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="social-links">
+    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <p>© 2025 All Rights Reserved | Al-Najdi</p>
+</footer>
+
+<button class="dark-toggle" id="darkToggle" aria-label="Toggle Dark Mode">
+  <i class="fas fa-moon"></i>
+</button>
+
+<script src="main.js"></script>
+<script>
+  // Dark mode toggle
+  const darkToggle = document.getElementById('darkToggle');
+  darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+
+  // Language switch to Arabic
+  const langSwitch = document.getElementById('langSwitch');
+  langSwitch.addEventListener('click', () => {
+    window.location.href = 'payment.html';
+  });
+
+  // Demo payment form submit
+  const paymentForm = document.getElementById('paymentForm');
+  paymentForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('Payment info received (demo)');
+  });
+</script>
+</body>
+</html>

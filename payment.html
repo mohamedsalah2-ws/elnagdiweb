@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الدفع | النجدي</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="navbar">
+  <nav class="navbar">
+    <div class="logo">النجدي</div>
+    <ul class="nav-links">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="services.html">الخدمات</a></li>
+      <li><a href="why-us.html">لماذا نحن</a></li>
+      <li><a href="contact.html">تواصل</a></li>
+    </ul>
+    <button id="langSwitch" class="lang-toggle">EN</button>
+  </nav>
+</header>
+
+<section class="payment-section">
+  <div class="payment-container">
+    <h1>الدفع</h1>
+    <p>أكمل بيانات الدفع لإتمام العملية</p>
+
+    <div class="payment-grid">
+      <div class="payment-form">
+        <form id="paymentForm">
+          <label for="name">اسم صاحب البطاقة</label>
+          <input type="text" id="name" name="name" placeholder="أدخل الاسم الكامل" required>
+
+          <label for="card">رقم البطاقة</label>
+          <input type="text" id="card" name="card" placeholder="XXXX XXXX XXXX XXXX" required>
+
+          <label for="expiry">تاريخ الانتهاء</label>
+          <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" name="cvv" placeholder="XXX" required>
+
+          <button type="submit" class="btn btn-submit">ادفع الآن</button>
+        </form>
+      </div>
+
+      <div class="payment-summary">
+        <h2>ملخص الدفع</h2>
+        <p>الخدمة: استشارات إدارية</p>
+        <p>السعر: 500م</p>
+        <p>الضرائب: 0 م</p>
+        <hr>
+        <h3>الإجمالي: 500 م</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="social-links">
+    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <p>© 2025 جميع الحقوق محفوظة للنجدي</p>
+</footer>
+
+<button class="dark-toggle" id="darkToggle" aria-label="تبديل الوضع الليلي">
+  <i class="fas fa-moon"></i>
+</button>
+
+<script src="main.js"></script>
+<script>
+  // Dark mode toggle
+  const darkToggle = document.getElementById('darkToggle');
+  darkToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+
+  // Language switch to English
+  const langSwitch = document.getElementById('langSwitch');
+  langSwitch.addEventListener('click', () => {
+    window.location.href = 'payment-en.html';
+  });
+
+  // Demo payment form submit
+  const paymentForm = document.getElementById('paymentForm');
+  paymentForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('تم استلام بيانات الدفع (نسخة تجريبية)');
+  });
+</script>
+</body>
+</html>
